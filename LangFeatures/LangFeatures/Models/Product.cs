@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace LangFeatures.Models
+﻿namespace LangFeatures.Models
 {
     public class Product
     {
         public string Name { get; set; }
         public decimal? Price { get; set; }
+        public Product Related { get; set; }
 
         public static Product[] GetProducts()
         {
@@ -23,6 +19,8 @@ namespace LangFeatures.Models
                 Name = "Lifejacket",
                 Price = 48.95M
             };
+
+            kayak.Related = lifeJacket;
 
             return new Product[] {kayak, lifeJacket, null};
         }
