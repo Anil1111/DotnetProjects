@@ -8,17 +8,74 @@ namespace LangFeatures.Controllers
     {
         public ViewResult Index()
         {
-            var results = new List<string>();
-
-            foreach (var p in Product.GetProducts())
+            //pattern matching -- #2
+            object[] data = new object[]
             {
-                var name = p?.Name ?? "<No Name>";
-                var price = p?.Price ?? 0;
-                var relatedName = p?.Related?.Name ?? "<None>";
-                results.Add($"Name: {name}, Price: {price}, Related: {relatedName}");
+                275M,
+                29.95M,
+                "apple",
+                "orange",
+                100,
+                10
+            };
+
+            decimal total = 0;
+
+            foreach (var obj in data)
+            {
+                switch (obj)
+                {
+                    case decimal decimalValue:
+                        total += decimalValue;
+                        break;
+                    case int intValue when intValue > 50:
+                        total += intValue;
+                        break;
+                }
             }
 
-            return View(results);
+
+            //pattern matching -- #1
+
+            //object[] data = new object[]
+            //{
+            //    275M, 29.95M, "apple","orange",100,10
+            //};
+            //decimal total = 0;
+
+            //foreach (var obj in data)
+            //{
+            //    if (obj is decimal d)
+            //    {
+            //        total += d;
+            //    }
+            //}
+
+            return View("Index", new string[] {$"Total: {total:C2}"});
+
+            //--------------------------------------------
+            //using an index initializer
+            //Dictionary<string, Product> products = new Dictionary<string, Product>
+            //{
+            //    ["Kayak"] = new Product { Name = "Kayak", Price = 275M},
+            //    ["Lifejacket"] = new Product { Name = "Lifejacket", Price = 48.95M}
+            //};
+
+            //return View("Index", products.Keys);
+
+            //----------------------------------------------
+
+            //var results = new List<string>();
+
+            //foreach (var p in Product.GetProducts())
+            //{
+            //    var name = p?.Name ?? "<No Name>";
+            //    var price = p?.Price ?? 0;
+            //    var relatedName = p?.Related?.Name ?? "<None>";
+            //    results.Add($"Name: {name}, Price: {price}, Related: {relatedName}");
+            //}
+
+            //return View(results);
         }
     }
 }
