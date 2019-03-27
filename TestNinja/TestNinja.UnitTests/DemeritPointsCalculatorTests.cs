@@ -12,7 +12,7 @@ namespace TestNinja.UnitTests
         public void CalculateDemeritPoints_SpeedIsLessThan0OrGreaterThanMaxSpeed_ReturnsArgOutOfRangeExp(int speed)
         {
             var dpc = new DemeritPointsCalculator();
-            Assert.That(()=>dpc.CalculateDemeritPoints(speed),Throws.Exception);
+            Assert.That(() => dpc.CalculateDemeritPoints(speed), Throws.Exception);
         }
 
         [Test]
