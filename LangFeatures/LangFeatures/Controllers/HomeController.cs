@@ -8,31 +8,39 @@ namespace LangFeatures.Controllers
     {
         public ViewResult Index()
         {
+            //extension methods
+            ShoppingCart cart = new ShoppingCart {Products = Product.GetProducts()};
+
+            decimal cartTotal = cart.TotalPrices(); //extension method
+
+            return View("Index", new string[] {$"Total: {cartTotal:C2}"});
+
+
             //pattern matching -- #2
-            object[] data = new object[]
-            {
-                275M,
-                29.95M,
-                "apple",
-                "orange",
-                100,
-                10
-            };
+            //object[] data = new object[]
+            //{
+            //    275M,
+            //    29.95M,
+            //    "apple",
+            //    "orange",
+            //    100,
+            //    10
+            //};
 
-            decimal total = 0;
+            //decimal total = 0;
 
-            foreach (var obj in data)
-            {
-                switch (obj)
-                {
-                    case decimal decimalValue:
-                        total += decimalValue;
-                        break;
-                    case int intValue when intValue > 50:
-                        total += intValue;
-                        break;
-                }
-            }
+            //foreach (var obj in data)
+            //{
+            //    switch (obj)
+            //    {
+            //        case decimal decimalValue:
+            //            total += decimalValue;
+            //            break;
+            //        case int intValue when intValue > 50:
+            //            total += intValue;
+            //            break;
+            //    }
+            //}
 
 
             //pattern matching -- #1
@@ -51,7 +59,7 @@ namespace LangFeatures.Controllers
             //    }
             //}
 
-            return View("Index", new string[] {$"Total: {total:C2}"});
+            //return View("Index", new string[] {$"Total: {total:C2}"});
 
             //--------------------------------------------
             //using an index initializer
