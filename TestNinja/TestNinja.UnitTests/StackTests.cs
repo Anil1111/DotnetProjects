@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace TestNinja.UnitTests
 {
@@ -8,7 +6,7 @@ namespace TestNinja.UnitTests
     public class StackTests
     {
         [Test]
-        public void Push_WhenObjectIsNull_ReturnsArgumentNullException()
+        public void Push_WhenObjectIsNull_ThrowsArgumentNullException()
         {
             var stack = new Fundamentals.Stack<object>();
             Assert.That(() => stack.Push(null), Throws.ArgumentNullException);
@@ -17,13 +15,13 @@ namespace TestNinja.UnitTests
         [Test]
         public void Push_ObjectAddedToList_ListIsEqualToOne()
         {
-            var stack = new Fundamentals.Stack<object>();
-            stack.Push("string");
+            var stack = new Fundamentals.Stack<string>();
+            stack.Push("a");
             Assert.That(stack.Count, Is.EqualTo(1));
         }
 
         [Test]
-        public void Pop_CountIsZero_ReturnsInvalidOperationException()
+        public void Pop_CountIsZero_ThrowsInvalidOperationException()
         {
             var stack = new Fundamentals.Stack<object>();
             Assert.That(() => stack.Pop(), Throws.InvalidOperationException);
@@ -53,7 +51,7 @@ namespace TestNinja.UnitTests
         [Test]
         public void Peek_Peeking_ReturnsTopStackValue()
         {
-            var stack = new Fundamentals.Stack<object>();
+            var stack = new Fundamentals.Stack<int>();
             stack.Push(1);
             stack.Push(2);
             var result = stack.Peek();
