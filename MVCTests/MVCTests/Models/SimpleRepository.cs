@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MVCTests.Models
+namespace WorkingWithMVC.Models
 {
     public class SimpleRepository
     {

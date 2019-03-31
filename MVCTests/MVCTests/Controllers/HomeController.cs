@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using MVCTests.Models;
+using WorkingWithMVC.Models;
 
-namespace MVCTests.Controllers
+namespace WorkingWithMVC.Controllers
 {
     public class HomeController : Controller
     {

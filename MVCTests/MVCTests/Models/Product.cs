@@ -1,4 +1,4 @@
-﻿namespace MVCTests.Models
+﻿namespace WorkingWithMVC.Models
 {
     public class Product
     {
