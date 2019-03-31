@@ -28,7 +28,7 @@ namespace MVCTests.Models
 
         public IEnumerable<Product> Products => products.Values;
 
-        private void AddProduct(Product p) => products.Add(p.Name, p);
+        public void AddProduct(Product p) => products.Add(p.Name, p);
 
     }
 }

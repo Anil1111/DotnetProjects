@@ -7,8 +7,7 @@
     "minify": {
       "enabled": true,
       "renameLocals": false
-    },
-    "sourceMap": false
+    }
   },
   {
     "outputFileName": "wwwroot/lib/jquery/dist/jquery.min.js",
@@ -18,7 +17,20 @@
     "minify": {
       "enabled": true,
       "renameLocals": false
-    },
-    "sourceMap": false
+    }
+  },
+  {
+    "outputFileName": "wwwroot/css/bundle.css",
+    "inputFiles": [
+      "wwwroot/css/first.css",
+      "wwwroot/css/second.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/bundle.js",
+    "inputFiles": [
+      "wwwroot/js/fourth.js",
+      "wwwroot/js/third.js"
+    ]
   }
 ]
