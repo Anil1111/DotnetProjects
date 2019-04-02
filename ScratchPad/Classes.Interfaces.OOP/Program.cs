@@ -7,9 +7,10 @@ namespace Classes.Interfaces.OOP
     {
         private static void Main(string[] args)
         {
-            var text = new Text {Width = 100};
-            text.Copy();
-
+            var dbMigrator = new DbMigrator(new Logger());
+            var installer = new Installer(new Logger());
+            dbMigrator.Migrate();
+            installer.Install();
         }
 
         private static void UsePost()
