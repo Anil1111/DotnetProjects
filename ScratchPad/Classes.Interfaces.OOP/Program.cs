@@ -7,7 +7,16 @@ namespace Classes.Interfaces.OOP
     {
         private static void Main(string[] args)
         {
-            
+            var post = new Post("How to program C#?", "Where do I start learning how to program?"
+                , DateTime.Now);
+            Console.WriteLine(post.Title);
+            post.UpVote();
+            Console.WriteLine(post.CurrentVoteCount);
+            post.DownVote();
+            post.DownVote();
+            Console.WriteLine(post.CurrentVoteCount);
+            Console.WriteLine(post.Title);
+            Console.WriteLine(post.Description);
         }
 
         private static void UseStopWatch()
