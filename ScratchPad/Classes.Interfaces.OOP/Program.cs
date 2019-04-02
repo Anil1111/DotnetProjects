@@ -7,7 +7,9 @@ namespace Classes.Interfaces.OOP
     {
         private static void Main(string[] args)
         {
-           
+            var text = new Text {Width = 100};
+            text.Copy();
+
         }
 
         private static void UsePost()
