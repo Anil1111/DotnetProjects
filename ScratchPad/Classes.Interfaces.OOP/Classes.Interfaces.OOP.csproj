@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Classes\Calculator.cs" />
     <Compile Include="Classes\Customer.cs" />
+    <Compile Include="Classes\HttpCookie.cs" />
     <Compile Include="Classes\Order.cs" />
     <Compile Include="Classes\Person.cs" />
     <Compile Include="Classes\Point.cs" />

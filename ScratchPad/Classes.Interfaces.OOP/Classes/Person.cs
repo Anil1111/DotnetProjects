@@ -8,6 +8,17 @@ namespace Classes.Interfaces.OOP.Classes
         public string Name { get; set; }
         public DateTime BirthDate { get; set; }
 
+        public int Age
+        {
+            get
+            {
+                var timeSpan = DateTime.Today - BirthDate;
+                var years = timeSpan.Days / 365;
+
+                return years;
+            }
+        }
+
         public void Introduce(string to)
         {
             Console.WriteLine($"(Hi {to}, I am {Name})");

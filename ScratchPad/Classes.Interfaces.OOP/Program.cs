@@ -7,13 +7,16 @@ namespace Classes.Interfaces.OOP
     {
         private static void Main(string[] args)
         {
-            
+            var cookie = new HttpCookie {["name"] = "Anthony"};
+            Console.WriteLine(cookie["name"]);
+
         }
 
         private static void UseAccessMod()
         {
-            var person = new Person {BirthDate = new DateTime(1982, 1, 1)};
-            Console.WriteLine(person.BirthDate);
+            var person = new Person { BirthDate = new DateTime(1970, 2, 10) };
+            Console.WriteLine(person.Age);
+
         }
 
         private static void UseOutMod()
