@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classes.Interfaces.OOP", "Classes.Interfaces.OOP\Classes.Interfaces.OOP.csproj", "{C95E7772-E566-46C5-9992-0A181C5AE586}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classes.Interfaces.OOP.Tests", "Classes.Interfaces.OOP.Tests\Classes.Interfaces.OOP.Tests.csproj", "{43A2198B-3526-4707-A325-9694BA121EFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C95E7772-E566-46C5-9992-0A181C5AE586}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C95E7772-E566-46C5-9992-0A181C5AE586}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C95E7772-E566-46C5-9992-0A181C5AE586}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43A2198B-3526-4707-A325-9694BA121EFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43A2198B-3526-4707-A325-9694BA121EFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43A2198B-3526-4707-A325-9694BA121EFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43A2198B-3526-4707-A325-9694BA121EFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
