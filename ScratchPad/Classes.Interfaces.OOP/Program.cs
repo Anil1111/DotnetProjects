@@ -7,11 +7,13 @@ namespace Classes.Interfaces.OOP
     {
         private static void Main(string[] args)
         {
-            var customer = new Customer(1);
-            customer.Orders.Add(new Order());
-            customer.Orders.Add(new Order());
+            
+        }
 
-            Console.WriteLine();
+        private static void UseAccessMod()
+        {
+            var person = new Person {BirthDate = new DateTime(1982, 1, 1)};
+            Console.WriteLine(person.BirthDate);
         }
 
         private static void UseOutMod()
