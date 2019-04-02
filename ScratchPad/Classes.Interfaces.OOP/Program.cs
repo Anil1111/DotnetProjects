@@ -7,9 +7,27 @@ namespace Classes.Interfaces.OOP
     {
         private static void Main(string[] args)
         {
+            
+        }
+
+        private static void UseStopWatch()
+        {
+            var stopWatch = new StopWatch();
+            stopWatch.Start();
+            System.Threading.Thread.Sleep(4000);
+            stopWatch.Stop();
+            Console.WriteLine(stopWatch.Duration.Seconds);
+            System.Threading.Thread.Sleep(1000);
+            stopWatch.Start();
+            System.Threading.Thread.Sleep(6000);
+            stopWatch.Stop();
+            Console.WriteLine(stopWatch.Duration.Seconds);
+        }
+
+        private static void UseIndexer()
+        {
             var cookie = new HttpCookie {["name"] = "Anthony"};
             Console.WriteLine(cookie["name"]);
-
         }
 
         private static void UseAccessMod()
@@ -47,7 +65,7 @@ namespace Classes.Interfaces.OOP
                 point.Move(100, 200);
                 Console.WriteLine($"Point is at {point.X}, {point.Y}");
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 Console.WriteLine("Unexpected error occured");
             }

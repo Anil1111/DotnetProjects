@@ -49,6 +49,7 @@
     <Compile Include="Classes\Order.cs" />
     <Compile Include="Classes\Person.cs" />
     <Compile Include="Classes\Point.cs" />
+    <Compile Include="Classes\StopWatch.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
