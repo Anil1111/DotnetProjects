@@ -6,8 +6,9 @@ namespace Inheritance
     {
         private static void Main(string[] args)
         {
-            var customer = new Customer();
-           
+            var car = new Car("345A23R67");
+
+
         }
     }
 }
