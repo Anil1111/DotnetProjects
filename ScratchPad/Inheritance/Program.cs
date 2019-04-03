@@ -1,4 +1,5 @@
-﻿using Inheritance.Classes;
+﻿using System;
+using Inheritance.Classes;
 
 namespace Inheritance
 {
@@ -6,7 +7,12 @@ namespace Inheritance
     {
         private static void Main(string[] args)
         {
-            var car = new Car("345A23R67");
+            Text text = new Text();
+            Shape shape = text;         //no up-casting required
+
+            text.Width = 200;
+            shape.Width = 100;
+            Console.WriteLine(text.Width); //both text and shape are ref'd to same objects (just different views)
 
 
         }
