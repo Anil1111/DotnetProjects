@@ -1,9 +1,8 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace MVCTests
+namespace WorkingWithMVC
 {
     public class Startup
     {
@@ -21,7 +20,8 @@ namespace MVCTests
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            
+            app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
 
             //app.Run(async (context) =>

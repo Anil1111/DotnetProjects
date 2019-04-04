@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MVCTests.Models
+namespace WorkingWithMVC.Models
 {
     public class SimpleRepository
     {
@@ -22,11 +22,13 @@ namespace MVCTests.Models
             {
                 AddProduct(p);
             }
+
+            products.Add("Error",null);
         }
 
         public IEnumerable<Product> Products => products.Values;
 
-        private void AddProduct(Product p) => products.Add(p.Name, p);
+        public void AddProduct(Product p) => products.Add(p.Name, p);
 
     }
 }
