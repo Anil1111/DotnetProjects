@@ -46,6 +46,7 @@
     <Compile Include="Classes\Car.cs" />
     <Compile Include="Classes\Customer.cs" />
     <Compile Include="Classes\Shape.cs" />
+    <Compile Include="Classes\Stack.cs" />
     <Compile Include="Classes\Text.cs" />
     <Compile Include="Classes\Vehicle.cs" />
     <Compile Include="Program.cs" />

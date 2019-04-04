@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Classes.Interfaces.OOP\Classes.Interfaces.OOP.csproj" />
+    <ProjectReference Include="..\Inheritance\Inheritance.csproj" />
   </ItemGroup>
 
 </Project>
