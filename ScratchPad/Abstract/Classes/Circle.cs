@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Abstract
+namespace Abstract.Classes
 {
     public class Circle : Shape
     {
