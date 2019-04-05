@@ -6,9 +6,15 @@ using Inheritance.Classes;
 
 namespace Inheritance
 {
+
     class Program
     {
         private static void Main(string[] args)
+        {
+
+        }
+
+        private static void UseStack()
         {
             var stack = new Inheritance.Classes.Stack();
             stack.Push(1);
