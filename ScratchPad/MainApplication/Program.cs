@@ -1,4 +1,5 @@
-﻿using Generics;
+﻿using System;
+using Generics;
 
 namespace MainApplication
 {
@@ -7,6 +8,18 @@ namespace MainApplication
         private static void Main(string[] args)
         {
             
+        }
+
+        private static void UseNullableT()
+        {
+            var number = new Generics.Nullable<int>(5);
+            Console.WriteLine($"Has Value ? {number.HasValue}");
+            Console.WriteLine($"Value: {number.GetValueOrDefault()}");
+
+            //nullable int
+            var anotherNumber = new Generics.Nullable<int>();
+            Console.WriteLine($"Has Value ? {anotherNumber.HasValue}");
+            Console.WriteLine($"Value: {anotherNumber.GetValueOrDefault()}");
         }
 
         private static void UseGenericList()
