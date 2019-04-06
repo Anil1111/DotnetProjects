@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.572
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classes.Interfaces.OOP", "Classes.Interfaces.OOP\Classes.Interfaces.OOP.csproj", "{C95E7772-E566-46C5-9992-0A181C5AE586}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extensibility", "Extensibility\Extensibility.csproj", "{90C693E1-A99E-4580-9C38-8960E01E45AF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interface.Inheritance", "Interface.Inheritance\Interface.Inheritance.csproj", "{26B6F8C4-B537-4553-A153-68A78A92409E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces.Polymorphism", "Interfaces.Polymorphism\Interfaces.Polymorphism.csproj", "{8E1FF17E-FAB7-408D-818C-5E78269913FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{26B6F8C4-B537-4553-A153-68A78A92409E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26B6F8C4-B537-4553-A153-68A78A92409E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26B6F8C4-B537-4553-A153-68A78A92409E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E1FF17E-FAB7-408D-818C-5E78269913FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E1FF17E-FAB7-408D-818C-5E78269913FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E1FF17E-FAB7-408D-818C-5E78269913FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E1FF17E-FAB7-408D-818C-5E78269913FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

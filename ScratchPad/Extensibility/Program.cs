@@ -10,7 +10,7 @@ namespace Extensibility
             var dbMigrator = new DbMigrator(new ConsoleLogger());
             dbMigrator.Migrate();
 
-            var dbMirgrator2 = new DbMigrator(new FileLogger("C:\\Users\\anthony.hollis\\OneDrive - Tyler Technologies, Inc\\Desktop\\migration.log"));
+            var dbMirgrator2 = new DbMigrator(new FileLogger("C:\\Users\\antho\\Desktop\\migration.log"));
             dbMirgrator2.Migrate();
         }
     }
