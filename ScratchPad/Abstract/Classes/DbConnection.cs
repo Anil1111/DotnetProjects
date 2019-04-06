@@ -6,7 +6,6 @@ namespace Abstract.Classes
     public abstract class DbConnection
     {
         private readonly string _connectionString;
-        private readonly TimeSpan _timeSpan;
 
         public DbConnection(string connectionString)
         {

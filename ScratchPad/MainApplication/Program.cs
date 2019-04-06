@@ -1,4 +1,5 @@
 ﻿using System;
+using Delegates;
 using Generics;
 
 namespace MainApplication
@@ -7,7 +8,8 @@ namespace MainApplication
     {
         private static void Main(string[] args)
         {
-            
+            var photoProc = new PhotoProcessor();
+            photoProc.Process("some path");
         }
 
         private static void UseNullableT()
