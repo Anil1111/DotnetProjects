@@ -9,7 +9,17 @@ namespace MainApplication
         private static void Main(string[] args)
         {
             var photoProc = new PhotoProcessor();
-            photoProc.Process("some path");
+            var filters = new PhotoFilters();
+            PhotoProcessor.PhotoFilterHandler filterHandler = filters.ApplyBrightness;
+            filterHandler += filters.ApplyContrast;
+            filterHandler += RemoveRedEye;
+
+            photoProc.Process("photo.jpg", filterHandler);
+        }
+
+        private static void RemoveRedEye(Photo photo)
+        {
+            Console.WriteLine("Remove Red Eye...");
         }
 
         private static void UseNullableT()
