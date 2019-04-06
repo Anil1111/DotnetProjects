@@ -14,9 +14,7 @@ namespace WorkflowEngine
                 new InvokeWebService(),
                 new NotifyCustomer(),
                 new UpdateDatabase()
-
             };
-
          
             foreach (var process in processes)
             {
