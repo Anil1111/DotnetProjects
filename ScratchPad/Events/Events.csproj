@@ -45,6 +45,7 @@
     <Compile Include="Classes\MessageService.cs" />
     <Compile Include="Classes\Video.cs" />
     <Compile Include="Classes\VideoEncoder.cs" />
+    <Compile Include="Classes\VideoEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
