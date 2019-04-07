@@ -1,12 +1,61 @@
 ﻿using System;
 using Delegates;
 using Generics;
+using Lambdas.Classes;
+using Book = Lambdas.Classes.Book;
+
 
 namespace MainApplication
 {
     class Program
     {
         private static void Main(string[] args)
+        {
+            UseLambdaTwo();
+        }
+
+        private static void UseLambdaTwo()
+        {
+            var books = new BookRepository().GetBooks();
+            var cheapBooks = books.FindAll(x => x.Price < 10);
+            foreach (var book in cheapBooks)
+            {
+                Console.WriteLine(book.Title);
+            }
+        }
+
+        private static void UseWithoutLambda()
+        {
+            var books = new BookRepository().GetBooks();
+            var cheapBooks = books.FindAll(IsCheaperThan10Dollars);
+            foreach (var book in cheapBooks)
+            {
+                Console.WriteLine(book.Title);
+            }
+        }
+
+        static bool IsCheaperThan10Dollars(Lambdas.Classes.Book book)
+        {
+            return book.Price < 10;
+        }
+
+        private static void UseLambdaOne()
+        {
+            // args => expression
+
+            // ()=> ...         - No args
+            // x => ...         - One arg
+            // (x,y,z) => ...   - Multiple args
+
+            Func<int, int> square = number => number * number;
+            Console.WriteLine(square(5));
+
+            const int factor = 5;
+            Func<int, int> multiplier = n => n * factor;
+            Console.WriteLine(multiplier(10));
+        }
+
+        private static void UseDelegate()
         {
             var photoProc = new PhotoProcessor();
             var filters = new PhotoFilters();
@@ -39,11 +88,11 @@ namespace MainApplication
             var numbers = new GenericList<int>();
             numbers.Add(10);
 
-            var books = new GenericList<Book>();
-            books.Add(new Book("Mary Poppins"));
+            var books = new GenericList<Generics.Book>();
+            books.Add(new Generics.Book("Mary Poppins"));
 
-            var dictionary = new GenericDictionary<string, Book>();
-            dictionary.Add("4ED21", new Book("Stocks"));
+            var dictionary = new GenericDictionary<string, Generics.Book>();
+            dictionary.Add("4ED21", new Generics.Book("Stocks"));
         }
     }
 }
