@@ -41,7 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\ConsoleMessageWrite.cs" />
+    <Compile Include="Classes\IMessageWriter.cs" />
     <Compile Include="Classes\Salutation.cs" />
+    <Compile Include="Classes\SecureMessageWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

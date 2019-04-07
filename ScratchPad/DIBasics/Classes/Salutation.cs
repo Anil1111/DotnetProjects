@@ -16,17 +16,4 @@ namespace DIBasics.Classes
             this._writer.Write("Executing exclamation...");
         }
     }
-
-    public interface IMessageWriter
-    {
-        void Write(string message);
-    }
-
-    public class ConsoleMessageWrite : IMessageWriter
-    {
-        public void Write(string message)
-        {
-            Console.WriteLine(message);
-        }
-    }
 }
