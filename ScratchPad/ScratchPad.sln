@@ -45,6 +45,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DIBasics.Tests", "DIBasics.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lambdas", "Lambdas\Lambdas.csproj", "{4A94D2B5-2DD0-4D4B-A1BA-8EA22260BC6C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Events", "Events\Events.csproj", "{257CEC3F-7D12-479E-9B3C-AACCAC14DABC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -123,6 +125,10 @@ Global
 		{4A94D2B5-2DD0-4D4B-A1BA-8EA22260BC6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A94D2B5-2DD0-4D4B-A1BA-8EA22260BC6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A94D2B5-2DD0-4D4B-A1BA-8EA22260BC6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{257CEC3F-7D12-479E-9B3C-AACCAC14DABC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{257CEC3F-7D12-479E-9B3C-AACCAC14DABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{257CEC3F-7D12-479E-9B3C-AACCAC14DABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{257CEC3F-7D12-479E-9B3C-AACCAC14DABC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -146,6 +152,7 @@ Global
 		{F1E86E02-AC6C-4C56-A574-BD47B2594454} = {2873FCA4-B628-47E9-B362-E7C1E2953658}
 		{813841D6-5171-4AB6-8309-306DAE48CA8E} = {2873FCA4-B628-47E9-B362-E7C1E2953658}
 		{4A94D2B5-2DD0-4D4B-A1BA-8EA22260BC6C} = {7432425F-D95A-4E79-A77E-91AC1D817B22}
+		{257CEC3F-7D12-479E-9B3C-AACCAC14DABC} = {7432425F-D95A-4E79-A77E-91AC1D817B22}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EA6E942C-054D-4A87-A39A-6A54D55952A4}
