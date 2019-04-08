@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Delegates;
 using Events.Classes;
 using Extension.Classes;
@@ -11,6 +12,18 @@ namespace MainApplication
     class Program
     {
         private static void Main(string[] args)
+        {
+            var books = new BookRepository().GetBooks();
+
+            //display list of books cheaper than $10
+            var cheapBooks = books.Where(x => x.Price < 10).OrderBy(x => x.Title);
+            foreach (var book in cheapBooks)
+            {
+                Console.WriteLine(book.Title + " " + book.Price);
+            }
+        }
+
+        private static void UseReverseStringWithExtension()
         {
             const string phrase = "This is a phrase that I want to reverse";
             Console.WriteLine(phrase.ReverseAString());
