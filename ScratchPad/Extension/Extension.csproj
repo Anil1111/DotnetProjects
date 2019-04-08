@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{79E4DC4A-3C60-4BE0-8460-111CF72904A1}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>MainApplication</RootNamespace>
-    <AssemblyName>MainApplication</AssemblyName>
+    <ProjectGuid>{0D846103-E3BA-4BD2-8347-C819F5BFF383}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Extension</RootNamespace>
+    <AssemblyName>Extension</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,33 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Classes\StringExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Delegates\Delegates.csproj">
-      <Project>{21bc7512-7b09-48c3-a472-c2906035a3de}</Project>
-      <Name>Delegates</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Events\Events.csproj">
-      <Project>{257cec3f-7d12-479e-9b3c-aaccac14dabc}</Project>
-      <Name>Events</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Extension\Extension.csproj">
-      <Project>{0d846103-e3ba-4bd2-8347-c819f5bff383}</Project>
-      <Name>Extension</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Generics\Generics.csproj">
-      <Project>{6fcf834d-66b9-4a76-8c4f-5a03c9540e44}</Project>
-      <Name>Generics</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Lambdas\Lambdas.csproj">
-      <Project>{4a94d2b5-2dd0-4d4b-a1ba-8ea22260bc6c}</Project>
-      <Name>Lambdas</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

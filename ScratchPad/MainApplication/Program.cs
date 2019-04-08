@@ -1,6 +1,7 @@
 ﻿using System;
 using Delegates;
 using Events.Classes;
+using Extension.Classes;
 using Generics;
 using Lambdas.Classes;
 
@@ -11,12 +12,41 @@ namespace MainApplication
     {
         private static void Main(string[] args)
         {
-            var video = new Video() {Title = "Video 1"};
-            var videoEncoder = new VideoEncoder();                      //publisher
-            var mailService = new MailService();                        //subscriber
-            var messageService = new MessageService();                  //subscriber
+            const string phrase = "This is a phrase that I want to reverse";
+            Console.WriteLine(phrase.ReverseAString());
+        }
 
-            videoEncoder.VideoEncoded += mailService.OnVideoEncoded;    //subscribing
+        private static void ReverseString()
+        {
+            const string words = "These are the words";
+            var len = words.Length - 1;
+            var rev = "";
+
+            while (len >= 0)
+            {
+                rev += words[len];
+                len--;
+            }
+
+            Console.WriteLine($"Original string was : {words}");
+            Console.WriteLine($"Reversed is : {rev}");
+        }
+
+        private static void UseExtension()
+        {
+            string post = "This is supposed to be a very long blog post blah blah blah...";
+            var shortenedPost = post.Shorten(5);
+            Console.WriteLine(shortenedPost);
+        }
+
+        private static void UseEvent()
+        {
+            var video = new Video() {Title = "Video 1"};
+            var videoEncoder = new VideoEncoder(); //publisher
+            var mailService = new MailService(); //subscriber
+            var messageService = new MessageService(); //subscriber
+
+            videoEncoder.VideoEncoded += mailService.OnVideoEncoded; //subscribing
             videoEncoder.VideoEncoded += messageService.OnVideoEncoded; //subscribing
 
             videoEncoder.Encode(video);
