@@ -13,13 +13,52 @@ namespace MainApplication
     {
         private static void Main(string[] args)
         {
-            var books = new BookRepository().GetBooks();
+            var books = new LINQ.Classes.BookRepository().GetBooks();
 
-            //display list of books cheaper than $10
-            var cheapBooks = books.Where(x => x.Price < 10).OrderBy(x => x.Title);
+            //Use Single when one and only one object satisfies the condition, if no match an exception will be thrown
+            var book = books.Single(x => x.Title == "Angular JS");
+            Console.WriteLine(book.Title);
+
+            //Use SingleOrDefault when you are not sure if only one objects matches. Null will be returned if it doesn't and it won't throw an execption
+            var book2 = books.SingleOrDefault(x => x.Title == "Angular Forever");
+            Console.WriteLine(book2 != null ? book2.Title : "Book2 was null");
+
+            //Use First to get the first object in a collection that matches the predicate
+            //Use FirstOrDefault if you want to return null and not an exception on a non match
+            //Use Last or LastOrDefault which is self explanatory at this point
+            var firstBook = books.First(x => x.Title == "Pro ASP.NET MVC 5");
+            Console.WriteLine(firstBook.Title + " " + firstBook.Price);
+
+            //Use Skip and Take ... does what they say
+            var pagedBooks = books.Skip(2).Take(3); //skip first two records and the next three
+            foreach (var pagedBook in pagedBooks)
+            {
+                Console.WriteLine(pagedBook.Title);
+            }
+
+            //Use count to items in the collection
+            Console.WriteLine($"Num of books in collection: {books.Count()}");
+
+            //Use Min and Max to get the lowest and highest values
+            Console.WriteLine($"Highest priced book: {books.Max(x => x.Price)}"); //highest priced book
+            Console.WriteLine($"Lowest priced book: {books.Min(x => x.Price)}"); //lowest priced book
+            Console.WriteLine($"Total amount of all books: {books.Sum(x => x.Price)}"); //total price of all books
+            Console.WriteLine($"Average price of all books: {books.Average(x => x.Price)}");
+        }
+
+        private static void UseLinqExampleOne()
+        {
+            var books = new LINQ.Classes.BookRepository().GetBooks();
+
+            //LINQ Extension Methods
+            var cheapBooks = books
+                .Where(x => x.Price < 10)
+                .OrderBy(x => x.Title)
+                .Select(x => x.Title);
             foreach (var book in cheapBooks)
             {
-                Console.WriteLine(book.Title + " " + book.Price);
+                Console.WriteLine(book);
+                //Console.WriteLine(book.Title + " " + book.Price);
             }
         }
 
@@ -54,7 +93,7 @@ namespace MainApplication
 
         private static void UseEvent()
         {
-            var video = new Video() {Title = "Video 1"};
+            var video = new Video() { Title = "Video 1" };
             var videoEncoder = new VideoEncoder(); //publisher
             var mailService = new MailService(); //subscriber
             var messageService = new MessageService(); //subscriber

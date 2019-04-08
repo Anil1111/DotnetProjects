@@ -9,10 +9,11 @@ namespace LINQ.Classes
         {
             return new List<Book>()
             {
-                new Book() {Title = "Book 1", Price = 5},
-                new Book() {Title = "Book 2", Price = 9.99f},
-                new Book() {Title = "Book 3", Price = 7},
-                new Book() {Title = "Book 4", Price = 9},
+                new Book() {Title = "Programming in C#", Price = 5},
+                new Book() {Title = "SQL in 24hrs", Price = 9.99f},
+                new Book() {Title = "Angular JS", Price = 7},
+                new Book() {Title = "Pro ASP.NET MVC 5", Price = 9},
+                new Book() {Title = "Pro ASP.NET MVC 5", Price = 11}
             };
         }
     }
