@@ -27,9 +27,20 @@ namespace Async
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async Task Button_Click(object sender, RoutedEventArgs e)
         {
-            DownloadHtml("http://irootandcode.com");
+          await DownloadHtmlAsync("http://irootandcode.com");
+        }
+
+        public async Task DownloadHtmlAsync(string url)
+        {
+            var webClient = new WebClient();
+            var html = await webClient.DownloadStringTaskAsync(url);
+
+            using (var streamWriter = new StreamWriter(@"C:\Users\antho\Desktop\result.html"))
+            {
+                await streamWriter.WriteAsync(html);
+            }
         }
 
         public void DownloadHtml(string url)
