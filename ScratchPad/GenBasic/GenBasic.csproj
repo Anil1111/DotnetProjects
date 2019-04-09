@@ -41,7 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\AnotherRepo.cs" />
+    <Compile Include="Classes\IRepository.cs" />
     <Compile Include="Classes\NonGenericClass.cs" />
+    <Compile Include="Classes\Repository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
