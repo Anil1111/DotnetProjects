@@ -13,13 +13,17 @@ namespace MainApplication
     {
         private static void Main(string[] args)
         {
-            var books = new BookRepository().GetBooks();
+            var books = new LINQ.Classes.BookRepository().GetBooks();
 
             //display list of books cheaper than $10
-            var cheapBooks = books.Where(x => x.Price < 10).OrderBy(x => x.Title);
+            var cheapBooks = books
+                    .Where(x => x.Price < 10)
+                    .OrderBy(x => x.Title)
+                    .Select(x => x.Title);
             foreach (var book in cheapBooks)
             {
-                Console.WriteLine(book.Title + " " + book.Price);
+                Console.WriteLine(book);
+                //Console.WriteLine(book.Title + " " + book.Price);
             }
         }
 
@@ -54,7 +58,7 @@ namespace MainApplication
 
         private static void UseEvent()
         {
-            var video = new Video() {Title = "Video 1"};
+            var video = new Video() { Title = "Video 1" };
             var videoEncoder = new VideoEncoder(); //publisher
             var mailService = new MailService(); //subscriber
             var messageService = new MessageService(); //subscriber
