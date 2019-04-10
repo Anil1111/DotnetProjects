@@ -43,12 +43,16 @@
   <ItemGroup>
     <Compile Include="Classes\AnotherRepo.cs" />
     <Compile Include="Classes\BaseClass.cs" />
+    <Compile Include="Classes\Car.cs" />
     <Compile Include="Classes\DelegatesAndEvents.cs" />
     <Compile Include="Classes\IRepository.cs" />
     <Compile Include="Classes\NonGenericClass.cs" />
+    <Compile Include="Classes\Phone.cs" />
     <Compile Include="Classes\Repository.cs" />
     <Compile Include="Classes\SimpleList.cs" />
     <Compile Include="Classes\TyperInference.cs" />
+    <Compile Include="Classes\Validators.cs" />
+    <Compile Include="Classes\ValidatorWithUsing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
