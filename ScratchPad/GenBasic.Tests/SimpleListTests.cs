@@ -1,5 +1,4 @@
-﻿using System;
-using GenBasic.Classes;
+﻿using GenBasic.Classes;
 using Xunit;
 
 namespace Generics.Tests
@@ -10,7 +9,7 @@ namespace Generics.Tests
         public void Get_WhenObjectRetrievedByIndex_ShouldReturnCorrectObject()
         {
             var simpleList = new SimpleList<object>();
-            var toAdd = new Object();
+            var toAdd = new object();
             simpleList.Add(toAdd);
 
             var retrieved = simpleList.Get(0);
