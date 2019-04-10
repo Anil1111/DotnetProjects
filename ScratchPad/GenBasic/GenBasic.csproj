@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\AnotherRepo.cs" />
+    <Compile Include="Classes\BaseClass.cs" />
+    <Compile Include="Classes\DelegatesAndEvents.cs" />
     <Compile Include="Classes\IRepository.cs" />
     <Compile Include="Classes\NonGenericClass.cs" />
     <Compile Include="Classes\Repository.cs" />
