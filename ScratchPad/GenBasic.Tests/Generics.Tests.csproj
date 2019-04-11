@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GenBasic\GenBasic.csproj" />
+    <ProjectReference Include="..\LinkedLists\LinkedLists.csproj" />
   </ItemGroup>
 
 </Project>
