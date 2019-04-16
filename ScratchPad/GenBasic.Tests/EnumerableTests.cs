@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using FluentAssertions;
 using FrameWork.Classes;
@@ -177,5 +178,82 @@ namespace Generics.Tests
             converted.Should().NotBeEmpty().And.HaveCount(5);
         }
 
+        [Fact]
+        public void ToArray_whenInovked_ShouldReturnExpectedBehavior()
+        {
+            var Anthony = new Person() { FirstName = "Anthony", LastName = "Hollis" };
+            var Jessie = new Person() { FirstName = "Jessie", LastName = "Carlsbad" };
+            var Lynda = new Person() { FirstName = "Lynda", LastName = "Wilson" };
+
+            var people = new People(Anthony, Jessie, Lynda);
+
+            Person[] peopleInArray = people.ToArray();
+            peopleInArray.Should().NotBeEmpty().And.HaveCount(3);
+
+            foreach (var person in peopleInArray)
+            {
+                person.FirstName.Should().NotBeEmpty();
+                person.LastName.Should().NotBeEmpty();
+            }
+        }
+
+        [Fact]
+        public void CopyToArray_WhenInvoked_ShouldReturnExpectedBehavior()
+        {
+            var Anthony = new Person() { FirstName = "Anthony", LastName = "Hollis" };
+            var Jessie = new Person() { FirstName = "Jessie", LastName = "Carlsbad" };
+            var Lynda = new Person() { FirstName = "Lynda", LastName = "Wilson" };
+
+            var people = new List<Person>(new Person[]{Anthony, Jessie, Lynda});
+            Person[] peopleInArray = people.ToArray();
+
+            foreach (var person in peopleInArray)
+            {
+                person.FirstName.Should().NotBeEmpty();
+                person.LastName.Should().NotBeEmpty();
+            }
+        }
+
+        [Fact]
+        public void ArrayAsIList_WhenInvoked_ShouldReturnExpectedBehavior()
+        {
+            var Anthony = new Person() { FirstName = "Anthony", LastName = "Hollis" };
+            var Jessie = new Person() { FirstName = "Jessie", LastName = "Carlsbad" };
+            var Lynda = new Person() { FirstName = "Lynda", LastName = "Wilson" };
+
+            Person[] personArray = {Anthony, Jessie, Lynda};
+            AssertIListValues(personArray);
+
+            List<Person> personList = new List<Person>(new Person[]{Anthony,Jessie,Lynda});
+            AssertIListValues(personList);
+        }
+
+        [Fact]
+        public void ModifyIListArray_WhenAttempted_ShouldThrowException()
+        {
+            //IList is readonly 
+            var Anthony = new Person() { FirstName = "Anthony", LastName = "Hollis" };
+            var Jessie = new Person() { FirstName = "Jessie", LastName = "Carlsbad" };
+            var Lynda = new Person() { FirstName = "Lynda", LastName = "Wilson" };
+
+            var personArray = new[] {Anthony, Jessie, Lynda};
+            IList<Person> people = personArray;
+
+            Action addAction = () => people.Add(Anthony);
+            addAction.Should().Throw<NotSupportedException>();
+
+            Action removeAction = () => people.RemoveAt(0);
+            removeAction.Should().Throw<NotSupportedException>();
+        }
+
+        private void AssertIListValues(IList<Person> people)
+        {
+            people.Count.Should().Be(3);
+            foreach (var person in people)
+            {
+                person.FirstName.Should().NotBeEmpty();
+                person.LastName.Should().NotBeEmpty();
+            }
+        }
     }
 }
