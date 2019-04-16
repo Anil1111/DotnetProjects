@@ -108,7 +108,7 @@ namespace Generics.Tests
             array.Should().BeEquivalentTo(new[] { 8, 9, 3, 4, 6 });
 
             List<int> range = list.GetRange(1, 2);
-            range.Should().NotBeEmpty().And.HaveCount(2).And.BeEquivalentTo(new[] {9, 3});
+            range.Should().NotBeEmpty().And.HaveCount(2).And.BeEquivalentTo(new[] { 9, 3 });
         }
 
         [Fact]
@@ -118,11 +118,11 @@ namespace Generics.Tests
             var Jessie = new Person() { FirstName = "Jessie", LastName = "Carlsbad" };
             var Lynda = new Person() { FirstName = "Lynda", LastName = "Wilson" };
 
-            List<Person> list = new List<Person>(new []{Anthony,Jessie});
+            List<Person> list = new List<Person>(new[] { Anthony, Jessie });
             list.Contains(Anthony).Should().BeTrue();
             list.Contains(Lynda).Should().BeFalse();
 
-            list.IndexOf(Anthony).Should().Be(1);
+            list.IndexOf(Anthony).Should().Be(0);
             list.Exists(x => x.FirstName == "Anthony").Should().BeTrue();
             list.TrueForAll(x => x.FirstName != null).Should().BeTrue();
         }
@@ -134,10 +134,48 @@ namespace Generics.Tests
             var Jessie = new Person() { FirstName = "Jessie", LastName = "Carlsbad" };
             var Lynda = new Person() { FirstName = "Lynda", LastName = "Wilson" };
 
-            List<Person> list = new List<Person>(new[] { Anthony, Jessie });
-            
+            List<Person> list = new List<Person>(new[] { Anthony, Jessie, Lynda });
+            var found = list.Find(x => x.FirstName == "Anthony");
+            found.Should().NotBeNull().And.Be(Anthony);
+
+            found = list.FindLast(x => x.LastName.ToLower().Contains("c"));
+            found.Should().NotBeNull().And.Be(Jessie);
+
+            IEnumerable<Person> foundPeople = list.FindAll(x => x.LastName.ToLower().Contains("s"));
+            foundPeople.Should().NotBeEmpty().And.HaveCount(3);
+
+
         }
 
+        [Fact]
+        public void Sort_WhenInvoked_ShouldReturnExpectedBehavior()
+        {
+            List<int> list = new List<int>(new[] { 8, 9, 3, 4, 6 });
+            list.Should().NotBeAscendingInOrder();
+
+            list.Sort();
+            list.Should().BeInAscendingOrder();
+
+            list.Sort((first, second) => first > second ? -1 : 1);
+            list.Should().BeInDescendingOrder();
+        }
+
+        [Fact]
+        public void ForEach_WhenInvoked_ShouldReturnExpectedBehavior()
+        {
+            List<int> list = new List<int>(new[] { 8, 9, 3, 4, 6, 6 });
+            int total = 0;
+            list.ForEach(i => total = total + i);
+            total.Should().Be(36);
+        }
+
+        [Fact]
+        public void ConvertAll_WhenInvoked_AllElementsShouldBeConverted()
+        {
+            List<int> list = new List<int>(new[] { 8, 9, 4, 3, 6 });
+            List<double> converted = list.ConvertAll(i => (double)i);
+            converted.Should().NotBeEmpty().And.HaveCount(5);
+        }
 
     }
 }
