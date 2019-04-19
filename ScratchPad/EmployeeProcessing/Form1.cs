@@ -75,6 +75,15 @@ namespace EmployeeProcessing
         {
             MakeEmployees();
             ShowEmployees();
+
+            //Display a greeting
+            Func<DateTime, string> greeting = MakeGreeting;
+            MessageBox.Show(greeting(DateTime.Now));
+        }
+
+        private string MakeGreeting(DateTime date)
+        {
+            return $"Today is {date.DayOfWeek}";
         }
 
         private void GiveRaiseBtn_Click(object sender, EventArgs e)
